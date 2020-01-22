@@ -11,7 +11,8 @@
    <p></p>
    <button id="js">JS</button>
    <p></p>
-
+   <button id="JsIn">загрузить инпут</button>
+<p id="result"></p>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script >
@@ -42,6 +43,15 @@ $(document).ready(function() {
             $("#js").next().text("Скрипт загружен")
           
         });
+
+     $('#JsIn').click(function() {
+        $('#result').load('test.html input', function() {
+
+ alert('Часть документа загружена');
+
+});
+    });
+
         
     });
 });
