@@ -1,0 +1,53 @@
+﻿﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax-форма</title>
+
+</head>
+
+<body>
+   <button id="html">ХТМЛ</button>
+   <p></p>
+   <button id="js">JS</button>
+   <p></p>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script >
+        
+
+$(document).ready(function() {
+    $('#html').click(function() {
+       
+        $.ajax({
+            type: "GET",
+            url: "test.html",
+            data: $(this).serialize()
+        }).done(function(html) {
+            $("#html").next().html(html)
+          
+        });
+        
+    });
+
+
+     $('#js').click(function() {
+       
+        $.ajax({
+            type: "GET",
+            url: "tes.js",
+            data: $(this).serialize()
+        }).done(function(jas) {
+            $("#js").next().text("Скрипт загружен")
+          
+        });
+        
+    });
+});
+
+    </script>
+ 
+
+</body>
+</html>
